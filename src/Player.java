@@ -43,14 +43,12 @@ public class Player {
 		if(checkName(s)) {
 			this.name = s;
 		}else {
-		
+			readName();
 		}
 		}
 		
 
-	}
-
-	
+	/*
 	//Reading symbols from user for each player
 	public void readSymbol() {
 		
@@ -60,7 +58,7 @@ public class Player {
 		this.symbol = game.checkSymbol(scan.next().charAt(0));
 		scan.close();
 	}
-	
+	*/
 	
 	public boolean checkName(String pname){
 
