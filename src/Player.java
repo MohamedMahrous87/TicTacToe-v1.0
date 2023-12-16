@@ -7,16 +7,19 @@ public class Player {
 	//declaring variables for players class
 	private String name;
 	private char symbol;
-	public static int num;
+	public  static int num = 0 ;
+	public Scanner scan = new Scanner(System.in);
 	
-	
+	//player constractor	
 	public Player() {
 		// TODO Auto-generated constructor stub
+		
 		name ="no name";
 		symbol = 'n';
 		num ++;
 	}
 
+	
 	public String getName() {
 		return name;
 	}
@@ -33,33 +36,39 @@ public class Player {
 		this.symbol = symbol;
 	}
 	
+	
 	//Reading names from user for each player
 	public void readName() {
-		
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("PLZ enter player "+ num+" name : " );
+
+		System.out.println("PLZ enter player "+ num +" name : " );
 		String s = scan.next();
 		if(checkName(s)) {
 			this.name = s;
 		}else {
 			readName();
 		}
-		}
+		
+	}
 		
 
-	/*
+	
 	//Reading symbols from user for each player
 	public void readSymbol() {
 		
-		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("PLZ enter player "+ num+" symbol (X or O) : " );
-		this.symbol = game.checkSymbol(scan.next().charAt(0));
-		scan.close();
+		System.out.println("PLZ enter player "+ num +" symbol (X or O) : " );
+		
+		char c = scan.next().charAt(0);
+		
+		if(checkSymbol(c)) {
+			this.symbol = c;
+		}else {
+			readSymbol();
 	}
-	*/
 	
+	}
+	
+	//validating names
 	public boolean checkName(String pname){
 
 		if((pname.equals(null)) || !pname.matches("^[a-zA-Z]*$")){
@@ -67,19 +76,23 @@ public class Player {
 			return false;
 		}
 			return true;
-		}
+	}
 		
-		
-
-
-	public char checkSymbol(char psymbol) {
+	//validating Symbols
+	public boolean checkSymbol(char psymbol) {
 		
 		if(psymbol == 'X' || psymbol == 'x' || psymbol == 'O' || psymbol == 'o' ){
 			
-			if(psymbol == pp.getSymbol()) {
-				pp.readSymbol();
-			}
+			return true;
 		}
-		return psymbol;
+		return false;
 	}
+
+
+	//printing players data
+	public void print() {
+		System.out.println("player "+ num +" name : " + this.name + "  Symbol : " + this.symbol);
+		
+	}
+	
 }
