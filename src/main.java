@@ -1,16 +1,18 @@
 
 public class main {
 
+	
 	// Generate game object
-	static Game game =  new  Game();
+		static Game game =  new  Game();
 	
 	//creating player 1
-	static Player p1 =  new Player();
+		static Player p1 =  new Player();
 	
 	//creating player 2
-	static Player p2 =  new Player();
+		static Player p2 =  new Player();
 
-
+	
+	
 	public static void getPlayers() {
 		
 		//creating first player and reading data 
@@ -32,19 +34,20 @@ public class main {
 		
 		p1.print();
 		p2.print();
-		
+	
 	}
 	
 	
 	public static void main(String[] args) {
-		
-	
+		int choice = 0;
+		boolean stat = false;
 		//getting players data
-		//main m = new main();
+		//main m = new main();	
 		getPlayers();
-		printPlayers();
-
-
+		//printPlayers();
+		
+		//show selection menu
+		game.menu();
 	}
 
 }

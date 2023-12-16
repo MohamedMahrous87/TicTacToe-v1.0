@@ -7,16 +7,19 @@ public class Player {
 	//declaring variables for players class
 	private String name;
 	private char symbol;
-	public  static int num = 0 ;
+	public  static int num ;
+	private int pnum ,score;
 	public Scanner scan = new Scanner(System.in);
 	
 	//player constractor	
 	public Player() {
 		// TODO Auto-generated constructor stub
-		
+		num = 0;
 		name ="no name";
 		symbol = 'n';
-		num ++;
+		score = 0 ;
+		
+		
 	}
 
 	
@@ -40,14 +43,17 @@ public class Player {
 	//Reading names from user for each player
 	public void readName() {
 
+			num++;
+			pnum = num;
 		System.out.println("PLZ enter player "+ num +" name : " );
 		String s = scan.next();
 		if(checkName(s)) {
 			this.name = s;
 		}else {
 			readName();
+			num -- ;
 		}
-		
+	
 	}
 		
 
@@ -91,8 +97,8 @@ public class Player {
 
 	//printing players data
 	public void print() {
-		System.out.println("player "+ num +" name : " + this.name + "  Symbol : " + this.symbol);
-		
+		System.out.println("player "+ pnum +" name : " + this.name + "  Symbol : " + this.symbol);
+	
 	}
 	
 }
