@@ -12,7 +12,6 @@ public class main {
 		static Player p2 =  new Player();
 
 	
-	
 	public static void getPlayers() {
 		
 		//creating first player and reading data 
@@ -39,15 +38,31 @@ public class main {
 	
 	
 	public static void main(String[] args) {
-		int choice = 0;
-		boolean stat = false;
+	
 		//getting players data
-		//main m = new main();	
 		getPlayers();
-		//printPlayers();
-		
+	
 		//show selection menu
 		game.menu();
+		
+		//paint playground 
+		game.paintBoard();
+		
+		//get player move
+		
+		
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
