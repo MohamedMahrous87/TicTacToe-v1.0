@@ -10,6 +10,7 @@ public class Player {
 	public  static int num ;
 	private int pnum ,score;
 	public Scanner scan = new Scanner(System.in);
+	public boolean winner = false;
 	
 	//player constractor	
 	public Player() {
@@ -45,7 +46,8 @@ public class Player {
 
 			num++;
 			pnum = num;
-		System.out.println("PLZ enter player "+ num +" name : " );
+		System.out.print("PLZ enter player "+ num +" name : " );
+		System.out.println();
 		String s = scan.next();
 		if(checkName(s)) {
 			this.name = s;
@@ -56,14 +58,12 @@ public class Player {
 	
 	}
 		
-
-	
 	//Reading symbols from user for each player
 	public void readSymbol() {
 		
 		
-		System.out.println("PLZ enter player "+ num +" symbol (X or O) : " );
-		
+		System.out.print("PLZ enter player "+ num +" symbol (X or O) : " );
+		System.out.println();
 		char c = scan.next().charAt(0);
 		
 		if(checkSymbol(c)) {
