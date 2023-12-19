@@ -45,12 +45,18 @@ public class main {
 	
 	
 	public static char getsymbol() {
+		
+		
 		//finde the winner player to give the move
 		
 		if(!p1.winner && !p2.winner || p1.winner == true) {
+			
+		
 			return  p1.getSymbol();
 			
 		}else {
+			
+		
 			return p2.getSymbol();
 		}
 		
@@ -73,20 +79,30 @@ public class main {
 		//getting first start player symbol
 		symb1 = getsymbol(); 
 		
+		//testing selected symbol
+		System.out.println(symb1);
+		
 		//playing and switching bettween players until we finde a winner
 		while (!winner) {
 			
-		//get player move
-		pmove = game.getMove(symb1);
-		if(symb1 == 'x' || symb1 == 'X') {
+			//get player move
+			pmove = game.getMove(symb1);
 			
-			symb1 = 'O';
-		}else {
+			//check if the play is a vailable to play
+			game.ckeckAvail(pmove,symb1);
 			
-			symb1 = 'X';
-		}
-		
-		game.ckeckAvail(pmove,symb1);
+			//check if there is any winners yet
+			game.ckeckWinner();
+			
+			if(symb1 == 'x' || symb1 == 'X') {
+				
+				symb1 = 'O';
+			}else {
+				
+				symb1 = 'X';
+			}
+			
+			
 		
 		}
 		
