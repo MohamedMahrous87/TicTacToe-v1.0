@@ -111,11 +111,8 @@ public class Game {
 				case 1:
 					if(posn[0] == '1' ) {
 						paintBoard(1 , sym);
-					}else if( posn[0] == 'o' || posn[0] == 'O'  ) {
-						
-						paintBoard(1 , sym);
 					}else {
-						paintBoard(1 , sym);
+						getMove(sym);
 					}
 					break;
 				case 2:
